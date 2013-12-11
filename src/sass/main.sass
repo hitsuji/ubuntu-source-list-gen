@@ -26,10 +26,15 @@ body
   margin: 0
   background-color: #ddd
 
+h1
+  margin: 0 0 10px 0
+  font-weight: 400
+  font-size: 1.5rem
+
 h2
   margin:      0
   font-weight: 400
-  font-size:   1em
+  font-size:   1rem
 
 ul
   margin:          6px 0
@@ -124,19 +129,19 @@ $checkbox-handle-radius: $input-padding / 2
   width:    $settings-width
 
 
-
-
 label
   display:          inline-block
   height:           $label-height
   width:            $label-width
-  &.focus
+  &.focus, &:hover
     > span:first-child
       text-decoration: underline
+  &.focus
     > span:last-child
       box-shadow: 0 0 5px 2px $orange
 
 label.search
+  height: $label-height + 6px
   &.focus
     box-shadow: 0 0 5px 2px $orange
 
@@ -187,7 +192,7 @@ label.radio, label.checkbox
       height:           $radio-height
       background-color: $inactive
       box-shadow: inset 0 0 5px #888
-      @include transition(background-color 0.4s)
+      @include transition(background-color 0.1s)
 
       > span
         margin:           $radio-handle-margin
@@ -237,17 +242,19 @@ label.checkbox > span:last-child > span > span
   text-align:       center
   background-color: $tt-bg
   color:            $tt-fg
+  cursor:           default
 
   &:hover:after
     position:       absolute
     left:           0
     bottom:         $tt-height + 8px
-    padding:        5px 10px
-    width:          $settings-width - 20px // 20px is padding * 2
+    padding:        5px 20px
+    width:          $settings-width - 40px // 40px is padding * 2
     border-radius:  5px
     background:     $tt-bg
     color:          $tt-fg
     content:        attr(tip)
+    text-align:     justify
     pointer-events: none
 
   &:hover:before
@@ -284,6 +291,7 @@ label.checkbox > span:last-child > span > span
     color: $red
 
 #download
+  margin-top: 20px
   text-align: center
   a
     padding:          5px 10px
@@ -293,6 +301,9 @@ label.checkbox > span:last-child > span > span
     background-color: #333
     color:            #fff
     cursor:           pointer
+
+    &:hover
+      background-color: #222
 
     &:focus
       box-shadow: 0 0 5px 2px $orange

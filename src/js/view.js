@@ -15,7 +15,7 @@ $.ext( SourceView, $.View, {
         }
     },
 
-    renderList: function( model, evt, data ) {
+    renderList: function ( model, evt, data ) {
         var mirror  = model.get( 'output.mirror',  ''    ),
             release = model.get( 'output.release', ''    ),
             branch  = model.get( 'output.branch',  ''    ),
@@ -47,7 +47,7 @@ $.ext( SourceView, $.View, {
 
 
         html.push( '################################################################################' )
-        html.push( '####           Ubuntu source.list generated at source.osullivan.cc          ####' )
+        html.push( '####           Ubuntu source.list generated at source.hitsuji.eu            ####' )
         html.push( '################################################################################' )
         html.push( '' )
 
@@ -150,11 +150,22 @@ $.ext( SourceView, $.View, {
 
         $( 'pre' ).html( html )
 
+        // if the browser does not have the URL object then we can skip the rest
+        if ( !URL )
+            return
+
+
         text = $( '#output pre' ).text()
         text = new Blob( [ text ], { type: 'text/plain' } )
         url  = URL.createObjectURL( text )
 
         $( '#download a' ).attr( 'href', url )
-    }
+    },
 
+    saveState: function ( model, evt, data ) {
+        var state = model.saveState()
+            state = JSON.stringify( state )
+
+        localStorage.setItem( 'model.data', state )
+    }
 } )

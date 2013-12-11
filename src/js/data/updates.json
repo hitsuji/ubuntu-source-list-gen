@@ -1,6 +1,6 @@
 updates = [
-  { "name": "updates",   "title": "Updates",   "tip": "{{tip}}" },
-  { "name": "security",  "title": "Security",  "tip": "{{tip}}" },
-  { "name": "backports", "title": "Backports", "tip": "{{tip}}" },
-  { "name": "proposed",  "title": "Proposed",  "tip": "{{tip}}" }
+  { "name": "updates",   "title": "Updates",   "tip": "Updates for serious bugs in Ubuntu packaging that do not affect the security of the system" },
+  { "name": "security",  "title": "Security",  "tip": "Patches for security vulnerabilities in Ubuntu packages. They are managed by the Ubuntu Security Team and are designed to change the behavior of the package as little as possible -- in fact, the minimum required to resolve the security problem. As a result, they tend to be very low-risk to apply and all users are urged to apply security updates" },
+  { "name": "backports", "title": "Backports", "tip": "Software from this repository may not have been tested as extensively as that contained in the main release, although it includes newer versions of some applications which may provide useful features. Also, please note that software in backports WILL NOT receive any review or updates from the Ubuntu security team" },
+  { "name": "proposed",  "title": "Proposed",  "tip": "The testing area for updates. This repository is recommended only to those interested in helping to test updates and provide feedback. Before enabling this repository you should ensure that it is configured with a low Pin-Priority to disable automatic installations" }
 ]

@@ -1,4 +1,4 @@
 others = [
-  { "name": "partner", "title": "Partner", "tip": "{{tip}}" },
-  { "name": "extras",  "title": "Extras",  "tip": "{{tip}}" }
+  { "name": "partner", "title": "Partner", "tip": "This software is not part of Ubuntu, but is offered by Canonical and the respective vendors as a service to Ubuntu users" },
+  { "name": "extras",  "title": "Extras",  "tip": "This software is not part of Ubuntu, but is offered by third-party developers who want to ship their latest software" }
 ]

@@ -3,9 +3,8 @@
 begin_scope "window", "undefined"
 use_strict
 
-#include "http://code.jquery.com/jquery-2.0.3.js"
-include "http://code.jquery.com/jquery-2.0.3.min.js"
-include "/../jqmvc/debug/jqmvc.js"
+include "/lib/js/jquery/jquery-2.0.3.min.js"
+include "/lib/js/jqmvc/jqmvc.0.0.1.js"
 
 */
     var countries,
@@ -21,7 +20,7 @@ include "/../jqmvc/debug/jqmvc.js"
         controller,
         $ = window.$,
 
-        URL = URL || webkitURL,
+        URL = window.URL || window.webkitURL,
 
         lastMirrorValue = ''
 
@@ -47,8 +46,10 @@ include "controller.js"
 */
 
 
-
 $( document ).ready( function () {
+
+    if ( !URL )
+        $( '#download' ).remove()
 
     // To disable auto completion on FF we need to use a form. In order to
     // prevent the page from reloading on a submit event we need this
@@ -112,10 +113,10 @@ $( document ).ready( function () {
     view       = new SourceView(       model, $node )
     controller = new SourceController( model, $node )
 
-    for ( i in defaults ) {
-        if ( defaults.hasOwnProperty( i ) )
-            model.set( i, defaults[i] )
-    }
+
+    controller.loadState( defaults )
+    view.on( 'change', view.saveState )
+
 
     $node.find( '#mirror .search input' )
             .on( 'keyup',   onMirrorKeyUp   )
@@ -128,7 +129,6 @@ $( document ).ready( function () {
 
     // TODO: set default by localstorage/json
     $node.find( '#release li' ).first().trigger( 'click' ) // set fist item as default
-
 } )
 
 
@@ -199,6 +199,8 @@ function onMirrorKeyUp ( e ) {
         li.setAttribute( 'data-country', item[0] )
         li.setAttribute( 'data-code',    item[1] )
         li.className = 'item'
+
+        li.addEventListener( 'mouseover', onMirrorHover )
 
         ul.appendChild( li )
     }
@@ -279,6 +281,15 @@ function onMirrorBlur( e ) {
     var ul  = $( '#country-list' )
 
     ul.empty()
+}
+
+function onMirrorHover( e ) {
+    var $t = $(e.target)
+    $t.addClass('selected')
+      .siblings()
+        .removeClass('selected')
+
+    model.set('output.mirror', $t.data('code'))
 }
 
 //## end_scope "window"

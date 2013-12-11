@@ -11,7 +11,7 @@ function SourceController( model, node ) {
 
 $.ext( SourceController, $.Controller, {
 
-    generateBranchList: function( model, evt, data ) {
+    generateBranchList: function ( model, evt, data ) {
         var list = []
 
         if ( model.get( 'branch.main',       false ) )
@@ -29,6 +29,27 @@ $.ext( SourceController, $.Controller, {
         list = list.join( ' ' )
         model.set( 'output.branch', list )
 
+    },
+
+    loadState: function ( defaults ) {
+        var state = localStorage.getItem( 'model.data' ),
+            data  = {}
+
+        try {
+            state = JSON.parse( state )
+            $.extend( data, defaults, state )
+        }
+        catch ( e ) {
+            $.extend( data, defaults )
+        }
+
+
+        model.loadState( data )
+
+        // for ( i in defaults ) {
+        //     if ( defaults.hasOwnProperty( i ) )
+        //         model.set( i, defaults[i] )
+        // }
     }
 
 } )

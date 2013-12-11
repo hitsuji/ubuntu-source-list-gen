@@ -9,9 +9,16 @@
     "build_systems":
     [
         {
-            "name": "buildr",
+            "name": "buildr debug",
             "working_dir": "$project_path",
-            "cmd": [ "./build.sh" ]
+            "shell": true,
+            "cmd": [ "./build.sh debug" ]
+        },
+        {
+            "name": "buildr release",
+            "working_dir": "$project_path",
+            "shell": true,
+            "cmd": [ "./build.sh release" ]
         }
     ]
 }
