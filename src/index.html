@@ -1,0 +1,62 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Ubuntu Repo Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="sources.js"></script>
+</head>
+<body>
+  <div id="source-gen">
+    <div id="bg-l"></div><div id="bg-r"></div>
+    <div id="settings">
+      <header>
+        <h1>Ubuntu Source.List Generator</h1>
+      </header>
+      <form autocomplete="off"> <!-- damn you firefox !!! -->
+        <div id="release">
+          <h2>Release</h2>
+          <ul v-name="output.release">
+          </ul>
+        </div>
+        <div id="mirror">
+          <h2>Mirror</h2>
+          <ul>
+            <li>
+              <label class="search"><input type="text" placeholder="search by country name or code"></label>
+              <ul id="country-list"></ul>
+            </li>
+          </ul>
+        </div>
+        <div id="branch">
+          <h2>Branches</h2>
+          <ul>
+          </ul>
+        </div>
+        <div id="updates">
+          <h2>Updates</h2>
+          <ul>
+          </ul>
+        </div>
+        <div id="others">
+          <h2>Extra Repos</h2>
+          <ul>
+          </ul>
+        </div>
+        <div id="source">
+          <h2>Package Sources</h2>
+          <ul>
+            <li><label class="checkbox"><span>Source</span><input type="checkbox" v-name="output.source" v-tgt="prop:checked" c-name="output.source" c-tgt="is::checked"><span><span><span></span></span></span></label></li>
+          </li>
+        </div>
+        <div id="download">
+          <a download="sources.list">Download</a>
+        </div>
+      </form>
+    </div>
+    <div id="output">
+      <pre>
+      </pre>
+    </div>
+  </div>
+</body>
+</head>

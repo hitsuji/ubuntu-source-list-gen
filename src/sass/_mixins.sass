@@ -1,0 +1,53 @@
+
+@mixin stack-browser($a,$b)
+  -webkit-#{$a}: $b
+  -moz-#{$a}: $b
+  -ms-#{$a}: $b
+  -o-#{$a}: $b
+  #{$a}: $b
+
+@mixin user-select($val)
+  @include stack-browser(user-select, $val)
+
+@mixin transform($val)
+  @include stack-browser(transform, $val)
+
+@mixin translate-x($width, $n)
+  @for $i from 0 through $n
+    &.translate-x-#{$i}
+      @include transform( translateX(-$width * $i) )
+      // margin-left: -$width * $i
+
+@mixin scale($x, $y)
+  @include transform(scale($x,$y))
+
+@mixin keyframes($name)
+  @-webkit-keyframes $val
+    @content
+  @-moz-keyframes $val
+    @content
+  @-ms-keyframes $val
+    @content
+  @-o-keyframes $val
+    @content
+  @keyframes $val
+    @content
+
+@mixin animation($name, $duration)
+  @include stack-browser(animation, $name $duration)
+
+@mixin transition($val)
+  @include stack-browser(transition, $val)
+
+@mixin transition-property($val)
+  @include stack-browser(transition-property, $val)
+
+@mixin transition-duration($val)
+  @include stack-browser(transition-duration, $val)
+
+@mixin transition-timing-function($val)
+  @include stack-browser(transition-timing-function, $val)
+
+@mixin transition-delay($val)
+  @include stack-browser(transition-delay, $val)
+

@@ -1,0 +1,20 @@
+defaults = {
+  "output.release": "precise",
+
+  "output.mirror": "",
+
+  "branch.main":       true,
+  "branch.restricted": true,
+  "branch.universe":   true,
+  "branch.multiverse": true,
+
+  "output.updates":   true,
+  "output.security":  true,
+  "output.backports": true,
+  "output.propsed":   true,
+
+  "output.partner": false,
+  "output.extras":  true,
+
+  "output.source": true
+}

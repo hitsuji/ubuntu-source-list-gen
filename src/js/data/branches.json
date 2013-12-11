@@ -1,0 +1,7 @@
+branches = [
+  { "name": "main",       "title": "Main",       "tip": "Officially supported software"                                            },
+  { "name": "restricted", "title": "Restricted", "tip": "Supported software that is not available under a completely free license" },
+  { "name": "universe",   "title": "Universe",   "tip": "Community maintained software, i.e. not officially supported software"    },
+  { "name": "multiverse", "title": "Multiverse", "tip": "Software that is not free"                                                }
+]
+

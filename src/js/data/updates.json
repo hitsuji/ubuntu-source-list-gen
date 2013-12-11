@@ -1,0 +1,6 @@
+updates = [
+  { "name": "updates",   "title": "Updates",   "tip": "{{tip}}" },
+  { "name": "security",  "title": "Security",  "tip": "{{tip}}" },
+  { "name": "backports", "title": "Backports", "tip": "{{tip}}" },
+  { "name": "proposed",  "title": "Proposed",  "tip": "{{tip}}" }
+]

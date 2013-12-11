@@ -1,0 +1,7 @@
+releases = [
+  { "title": "Precise 12.04 LTS", "code": "precise" },
+  { "title": "Quantal 12.10",     "code": "quantal" },
+  { "title": "Raring 13.04",      "code": "raring"  },
+  { "title": "Saucy 13.10",       "code": "saucy"   },
+  { "title": "Trusty 14.04 BETA", "code": "trusty"  }
+]

@@ -1,0 +1,4 @@
+others = [
+  { "name": "partner", "title": "Partner", "tip": "{{tip}}" },
+  { "name": "extras",  "title": "Extras",  "tip": "{{tip}}" }
+]
