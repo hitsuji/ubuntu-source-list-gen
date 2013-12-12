@@ -24,7 +24,7 @@ html
 
 body
   margin: 0
-  background-color: #ddd
+  background-color: #272822
 
 h1
   margin: 0 0 10px 0
@@ -110,23 +110,15 @@ $checkbox-handle-radius: $input-padding / 2
   top:      0
   bottom:   0
 
-#bg-l
-  left:  0
-  width: $settings-width + $settings-padding * 2
-  background-color: #ddd
-
-#bg-r
-  left:  $settings-width + $settings-padding * 2
-  right: 0
-  background-color: #272822
-
 
 #settings
-  position: absolute
-  left:     0
-  top:      0
-  padding:  $settings-padding
-  width:    $settings-width
+  position:         absolute
+  left:             0
+  top:              0
+  padding:          $settings-padding
+  width:            $settings-width
+  min-height:       100%
+  background-color: #ddd
 
 
 label
@@ -163,6 +155,8 @@ label.search
   li
     margin:          0
     padding:         4px 20px
+    &.item
+      cursor:        pointer
     &:first-child
       margin-top:    10px
     &:last-child
@@ -269,14 +263,14 @@ label.checkbox > span:last-child > span > span
 
 
 #output
-  position: absolute
-  left:     $settings-width + $settings-padding * 2
-  right:    0
-  top:      0
+  position:         absolute
+  left:             $settings-width + $settings-padding * 2
+  top:              0
 
   pre
     @include user-select(auto)
-    color: #888
+    margin: 0
+    color:  #888
 
   .deb
     color: $orange
